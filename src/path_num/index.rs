@@ -1,15 +1,15 @@
-use std::{fs};
+use std::fs;
 
 pub struct FileNum();
 impl FileNum {
-  pub  fn from(path: Vec<String>) -> i64 {
+    pub fn from(path: Vec<String>) -> i64 {
         // if path.len() > 0 {
         //     return 0;
         // };
         let mut sum = 0;
         for item in path.iter() {
-          let num =   update_path_name_suffix(item, 0);
-            sum+=num;
+            let num = update_path_name_suffix(item, 0);
+            sum += num;
         }
         sum
     }
