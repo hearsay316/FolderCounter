@@ -3,7 +3,7 @@
 
 use folder_counter::path_num::index::FileNum;
 use slint::SharedString;
-use slint_rust_template::pathNum::index::FileNum;
+
 use std::error::Error;
 
 slint::include_modules!();
