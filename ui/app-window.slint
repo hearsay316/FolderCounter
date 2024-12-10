@@ -6,6 +6,7 @@ export component AppWindow inherits Window {
     in-out property <int> counter: 0;
     in-out property <string> fileDir: "";
     in-out property <bool> button_visible: true;
+    in-out property <string> button_text: "点击选择文件夹";
     callback request-increase-value();
     callback request-file-dir();
     VerticalBox {
@@ -16,25 +17,20 @@ export component AppWindow inherits Window {
                 }
             }
         }
-
         TouchArea {
             Text {
                 text: "文件夹地址是: \{root.fileDir}";
             }
-
             clicked => {
                 root.counter = 0;
                 root.fileDir = "";
                 root.button_visible = true;
             }
         }
-
         button := Button {
-
-            text: "点击选择文件夹";
+            text: root.button_text;
             clicked => {
                 if (!root.button_visible) {
-
                     button.text = "点击选择文件夹";
                     root.request-file-dir();
                 } else {
